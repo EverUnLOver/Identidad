@@ -9,7 +9,7 @@ urlpatterns = [
     # Django Admin
     path(settings.ADMIN_URL, admin.site.urls),
 
-    path('', include(('identidad.personas.urls', 'personas'), namespace='personas')),
+    path('personas/', include(('identidad.personas.urls', 'personas'), namespace='personas')),
 
 
 
