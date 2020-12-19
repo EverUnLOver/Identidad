@@ -8,4 +8,4 @@ class PersonasConfig(AppConfig):
     """Configuracion de app personas."""
 
     name = 'identidad.personas'
-    verbose_name = 'Personas'
+    verbose_name = 'personas'

@@ -1,1 +1,1 @@
-from .personas import SearchView
+from .personas import PersonasListView

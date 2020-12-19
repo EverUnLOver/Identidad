@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
 {% block container %}
-  {{ form.DNI }}
+  {% for persona in personas %}
+    {% include "personas/tarjeta.html" %}
+  {% endfor %}
 {% endblock container %}

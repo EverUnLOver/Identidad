@@ -20,7 +20,6 @@ class PersonForm(forms.Form):
     segundo_nombre = forms.CharField(max_length=20, min_length=2)
     primer_apellido = forms.CharField(max_length=20, min_length=2)
     segundo_apellido = forms.CharField(max_length=20, min_length=2)
-    nombre_completo = forms.CharField()
     DNI = forms.CharField(max_length=20, min_length=5)
 
     # Informacion de contacto
@@ -53,8 +52,8 @@ class SearchPersonForm(forms.Form):
 
     def clean_search(self):
         try:
-            persona = Personas.objects.get(DNI=self.cleaned_data['DNI'])
+            personas = Personas.objects.get(DNI=self.cleaned_data['DNI'])
         except Personas.DoesNotExist:
             raise forms.ValidationError('Este DNI aun no esta registrado.')
-        return persona
+        return personas
     

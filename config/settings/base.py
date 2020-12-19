@@ -50,6 +50,9 @@ ROOT_URLCONF = "config.urls"
 # https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = "config.wsgi.application"
 
+# https://docs.djangoproject.com/en/3.1/topics/auth/customizing/
+AUTH_USER_MODEL = 'personas.Personas'
+
 # APPS
 # ------------------------------------------------------------------------------
 DJANGO_APPS = [
@@ -62,6 +65,7 @@ DJANGO_APPS = [
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
     "django.forms",
+    "django_filters",
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
@@ -278,7 +282,6 @@ ACCOUNT_AUTHENTICATION_METHOD = "username"
 ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-
 
 # django-rest-framework
 # -------------------------------------------------------------------------------

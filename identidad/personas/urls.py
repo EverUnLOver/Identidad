@@ -1,14 +1,16 @@
 """Personas urls."""
 
-# Django
+# Urls
 from django.urls import path
-from django.contrib.auth import views as auth_views
+
 # Views
-from identidad.personas.views import SearchView
+from identidad.personas.views import PersonasListView
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     # Personas
-    path('search/', view=SearchView.as_view(), name='search'),
+    path('search/', view=PersonasListView.as_view(), name='search'),
 
     # Users
     path('login/', auth_views.LoginView.as_view(template_name='usuarios/login.html'), name='login'),
