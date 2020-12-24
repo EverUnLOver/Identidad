@@ -66,6 +66,7 @@ DJANGO_APPS = [
     "django.contrib.admin",
     "django.forms",
     "django_filters",
+    "bootstrapform"
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",

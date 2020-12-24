@@ -35,13 +35,7 @@ class Personas(AbstractUser):
     )
 
     #Informacion extra
-    estados_civiles = (
-        ('SOLTERO', 'Soltero'),
-        ('CASADO', 'Casado'),
-        ('COMPROMETIDO', 'Comprometido'),
-        ('AVENTURERO', 'Aventutero')
-    )
-    estado_civil = models.CharField(choices=estados_civiles, max_length=12)
+    estado_civil = models.ForeignKey('personas.EstadoCivil', on_delete=models.SET_NULL, null=True)
 
     USERNAME_FIELD = 'DNI'
     REQUIRED_FIELDS = ['celular','username', 'email']
@@ -57,3 +51,6 @@ class Personas(AbstractUser):
 
     def __str__(self):
         return str('Nombre: '+self.username+', DNI: '+self.DNI)
+    
+    class Meta:
+        ordering = ('username',)
