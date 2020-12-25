@@ -2,7 +2,7 @@
 import django_filters
 
 # Models
-from identidad.personas.models import Personas, EstadoCivil
+from identidad.personas.models import Personas
 
 class PersonasFilter(django_filters.FilterSet):
 

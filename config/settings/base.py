@@ -71,11 +71,11 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "crispy_forms",
     "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
+    #"allauth.account",
+    #"allauth.socialaccount",
     "django_celery_beat",
     "rest_framework",
-    "rest_framework.authtoken",
+    #"rest_framework.authtoken",
     "corsheaders",
 ]
 
@@ -132,6 +132,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "identidad.middleware.personas.AdminPathMiddleware",
 ]
 
 # STATIC

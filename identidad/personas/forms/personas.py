@@ -2,13 +2,12 @@
 
 # Django
 from django import forms
-from django.core.validators import RegexValidator
 from django.forms import widgets
 
 # Models
 from identidad.personas.models import Personas
 
-class PersonForm(forms.Form):
+class PersonSignUpForm(forms.Form):
     """Formulario personas.
 
     Este formulario esta diseñado para ayudar al frontend a crear la pagina donde se proporciona
@@ -44,16 +43,4 @@ class PersonForm(forms.Form):
         except Personas.DoesNotExist:
             persona = Personas.objects.create(**data)
         raise forms.ValidationError('Ya hay alguien con este DNI.')
-
-class SearchPersonForm(forms.Form):
-    """Se emplea para la busqueda de personas mediante el DNI."""
-
-    DNI = forms.CharField()
-
-    def clean_search(self):
-        try:
-            personas = Personas.objects.get(DNI=self.cleaned_data['DNI'])
-        except Personas.DoesNotExist:
-            raise forms.ValidationError('Este DNI aun no esta registrado.')
-        return personas
     

@@ -3,8 +3,7 @@
 # Django
 from django.views.generic import FormView
 
-# Forms
-from identidad.personas.forms import SearchPersonForm
+"""Archivo de vistas para personas."""
 
 # Filters
 from identidad.personas.filters import PersonasFilter
@@ -12,10 +11,13 @@ from identidad.personas.filters import PersonasFilter
 # Views
 from django.views.generic import ListView
 
+# Mixins
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 # Models
 from identidad.personas.models import Personas
 
-class PersonasListView(ListView):
+class PersonasListView(LoginRequiredMixin, ListView):
     """Lista de personas""" 
 
     model = Personas
