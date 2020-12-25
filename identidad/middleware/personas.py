@@ -13,7 +13,8 @@ class AdminPathMiddleware:
 
     def __call__(self, request):
         """Codigo para cambiar la ruta."""
-        if not request.user.is_staff:
+        if request.user.is_staff:
+            #import pdb; pdb.set_trace()
             if request.path == '/admin/':
                 return redirect('/admin/personas/')
 
